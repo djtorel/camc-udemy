@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var like_button_1 = require("./like-button");
+var likeButton = new like_button_1.LikeButton(0);
+console.log('Clicked like');
+likeButton.like();
+likeButton.showStatus();
+console.log('Clicked like again');
+likeButton.like();
+likeButton.showStatus();
