@@ -1,13 +1,13 @@
-import { LikeButton } from './like-button';
+import { LikeComponent } from './likes.component';
 
-const likeButton = new LikeButton(0);
+const likeButton = new LikeComponent(0, false);
 
 console.log('Clicked like');
-likeButton.like();
+likeButton.onClick();
 
 likeButton.showStatus();
 
 console.log('Clicked like again');
-likeButton.like();
+likeButton.onClick();
 
 likeButton.showStatus();
