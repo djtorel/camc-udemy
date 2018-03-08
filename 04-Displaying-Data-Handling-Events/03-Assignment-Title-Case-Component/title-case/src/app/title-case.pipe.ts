@@ -10,7 +10,10 @@ export class TitleCasePipe implements PipeTransform {
       return null;
     }
 
+    // Convert string input into lower case then split into array
     const wordsArray = string.toLowerCase().split(' ');
+
+    // Map through words array and apply title case then join
     const titleCaseString = wordsArray.map((word, index) => {
       if (index > 0 && this.isPreposition(word)) {
         return word;
@@ -23,6 +26,7 @@ export class TitleCasePipe implements PipeTransform {
     return titleCaseString;
   }
 
+  // Check against a list of prepositions and return boolean
   private isPreposition(word: string): boolean {
     const prepositions = [
       'the',
@@ -31,6 +35,7 @@ export class TitleCasePipe implements PipeTransform {
     return prepositions.includes(word);
   }
 
+  // Convert a word to title case
   private toTitleCase(word: string): string {
     return word.slice(0, 1).toUpperCase() + word.slice(1);
   }
