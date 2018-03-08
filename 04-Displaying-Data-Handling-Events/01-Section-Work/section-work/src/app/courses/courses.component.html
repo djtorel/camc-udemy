@@ -1,0 +1,21 @@
+<div
+  (click)="onDivClicked()"
+>
+  <button
+    class="btn btn-primary"
+    [class.active]="isActive"
+    [style.backgroundColor]="isActive ?  'blue' : 'purple'"
+    (click)="onSave($event)"
+    >Save
+  </button>
+  <input
+    #email
+    (keyup.enter)="onKeyUp(email.value)"
+  >
+  <input
+    [(ngModel)]="password"
+    (keyup.enter)="onPasswordEnter()"
+  >
+</div>
+<br/>
+<app-pipes></app-pipes>
