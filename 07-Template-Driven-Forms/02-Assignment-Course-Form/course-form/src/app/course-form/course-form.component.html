@@ -32,7 +32,7 @@
         {{ category.name }}
       </option>
     </select>
-    <app-form-error *ngIf="!categoryObj.valid" name="Category" [fieldObj]="categoryObj"></app-form-error>
+    <app-form-error name="Category" [fieldObj]="categoryObj"></app-form-error>
   </div>
   <div class="form-check">
     <input ngModel id="isGuaranteed" name="isGuaranteed" type="checkbox" class="form-check-input">
