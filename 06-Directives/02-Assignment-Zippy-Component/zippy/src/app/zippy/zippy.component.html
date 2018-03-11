@@ -1,0 +1,22 @@
+<div class="card">
+  <div
+    class="card-header"
+    [class.gray-background]="isExpanded"
+    (click)="toggle()"
+    >
+    {{ title }}
+    <i
+      class="fas"
+      [ngClass]="{
+        'fa-angle-down': !isExpanded,
+        'fa-angle-up': isExpanded
+      }"
+      >
+    </i>
+  </div>
+  <div class="card-body" *ngIf="isExpanded">
+    <div class="card-text">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
