@@ -1,0 +1,33 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
+  <div class="form-group">
+    <label>
+      <h3>Enter a github profile to display their followers:</h3>
+    </label>
+    <div class="input-group">
+      <input
+        (keyup.enter)="onSubmit()"
+        type="text"
+        class="form-control"
+        formControlName="search"
+        placeholder="ex: djtorel">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-outline-secondary">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div *ngIf="followers" >
+  <hr>
+
+  <h4>Followers:</h4>
+  <div
+    *ngFor="let follower of followers" >
+      <app-display-followers
+        [follower]="follower" >
+      </app-display-followers>
+      <hr *ngIf="followers.length > 1">
+  </div>
+</div>
