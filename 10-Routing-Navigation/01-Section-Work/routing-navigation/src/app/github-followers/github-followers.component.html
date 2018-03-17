@@ -1,0 +1,13 @@
+<div class="media">
+    <a [routerLink]="['/followers', follower.id, follower.login]">
+      <img [src]="follower.avatar_url" alt="" class="mr-3">
+    </a>
+  <div class="media-body">
+    <a [routerLink]="['/followers', follower.id, follower.login]">
+      <h5 class="mt-0"> {{ follower.login }} </h5>
+    </a>
+    <a [href]="follower.html_url">
+      {{ follower.html_url }}
+    </a>
+  </div>
+</div>
